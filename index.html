@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignis 3D | Criando o Futuro da Modelagem Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo"><img src="assets/logotipo.png" alt="Ignis 3D"></a>
+        <ul class="nav-links">
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#ignis-ai">IgnisAI</a></li>
+            <li class="lang-dropdown">
+                <button class="lang-btn">🌐 PT-BR</button>
+                <div class="lang-menu">
+                    <a href="javascript:void(0)" onclick="translateTo('pt', this)">Português (BR)</a>
+                    <a href="javascript:void(0)" onclick="translateTo('en', this)">English</a>
+                    <a href="javascript:void(0)" onclick="translateTo('hi', this)">हिन्दी (Hindi)</a>
+                    <a href="javascript:void(0)" onclick="translateTo('ja', this)">日本語 (Japanese)</a>
+                    <a href="javascript:void(0)" onclick="translateTo('zh-CN', this)">中文 (Chinese)</a>
+                    <a href="javascript:void(0)" onclick="translateTo('es', this)">Español</a>
+                    <a href="javascript:void(0)" onclick="translateTo('ko', this)">한국어 (Korean)</a>
+                    <a href="javascript:void(0)" onclick="translateTo('ru', this)">Русский (Russian)</a>
+                </div>
+            </li>
+            <li><a href="#download" class="btn-nav">Baixar Agora</a></li>
+        </ul>
+    </nav>
+
+    <!-- Elemento oculto necessário para o Google Translate -->
+    <div id="google_translate_element" style="position: absolute; opacity: 0; pointer-events: none; z-index: -1;"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <img src="assets/logomarca.png" alt="Icone Ignis" class="hero-icon">
+            <h1>A ferramenta definitiva para quem respira <span>3D</span>.</h1>
+            <p>Do modding de Skyrim à voxelização para Minecraft. O Ignis 3D é o seu novo braço direito na criação de ativos digitais.</p>
+            <div class="hero-btns">
+                <a href="#download" class="btn-primary">Download Ignis 3D</a>
+                <a href="#extensoes" class="btn-secondary">Ver Extensões</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="recursos" class="features">
+        <h2>Por que o Ignis 3D?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Multi-formato</h3>
+                <p>Suporte nativo para GLB, GLTF, OBJ, NIF (Gamebryo), JSON e I3D. Tudo o que você precisa em um só lugar.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Estúdio de Texturas</h3>
+                <p>Pinte, edite UVs e aplique tipografias sem sair do app. Otimize seu workflow.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Voxelização</h3>
+                <p>Transforme malhas complexas em blocos perfeitos para Minecraft Bedrock com um clique.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Agilidade e Praticidade</h3>
+                <p>Mais leve e intuitivo que grandes softwares industriais. Ideal para ajustes rápidos e edições leves sem a complexidade de ferramentas pesadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ignis-ai" class="ai-section">
+        <div class="ai-container">
+            <div class="ai-badge">FLAGSHIP EXTENSION</div>
+            <h2>A Revolução <span>IgnisAI™</span></h2>
+            <p class="ai-description">Muito mais que um assistente: é o sistema nervoso central do seu workflow. A IgnisAI integra inteligência de ponta para que você foque apenas na arte, enquanto ela cuida da execução.</p>
+            
+            <div class="ai-features-extra">
+                <div class="ai-item">
+                    <h4>🎙️ Controle por Voz (STT/TTS)</h4>
+                    <p>Fale com sua cena. Comande rotações, trocas de materiais e ajustes de luz sem tirar as mãos do mouse.</p>
+                </div>
+                <div class="ai-item">
+                    <h4>⚙️ Automação Inteligente</h4>
+                    <p>Peça para a IA centralizar objetos, otimizar malhas ou organizar sua hierarquia de peças instantaneamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download-section">
+        <h2>Pronto para começar?</h2>
+        <div class="download-container">
+            <div class="main-download">
+                <h3>Ignis 3D (Core)</h3>
+                <p>A versão completa com todos os recursos base de visualização e edição.</p>
+                <a href="#" class="btn-download">Baixar Instalador (.exe)</a>
+            </div>
+            
+            <div id="extensoes" class="extensions-list">
+                <h3>Extensões Modulares</h3>
+                <p>Personalize sua experiência com pacotes adicionais:</p>
+                <ul>
+                    <li><a href="#">🔥 <strong>Extensão IgnisAI (Núcleo de Inteligência)</strong></a></li>
+                    <li><a href="#">📦 Extensão IgnisIA3D (Geração Generativa de Malhas)</a></li>
+                    <li><a href="#">📦 Extensão de Renderização Realista HDR</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="assets/ignis3D-logotipo-e-logomarca.png" alt="Ignis 3D Logo" class="footer-logo">
+        <p>&copy; 2026 Ignis 3D - Criando o futuro da modelagem digital.</p>
+    </footer>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="script.js"></script>
+</body>
+</html>
