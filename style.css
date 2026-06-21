@@ -281,6 +281,32 @@ body { top: 0px !important; }
 .extensions-list a { color: var(--primary); text-decoration: none; }
 .extensions-list a:hover { text-decoration: underline; }
 
+/* Contador de downloads - discreto e sem destaque */
+.download-counter {
+    margin-top: 8px;
+    color: var(--text-dim);
+    font-weight: 300;
+    font-size: 0.62rem;
+    letter-spacing: 0.2px;
+}
+
+#download-count { font-variant-numeric: tabular-nums; }
+
+/* Botão discreto de reset (visível somente para admin via URL ou JS) */
+.download-reset {
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-weight: 300;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    display: none; /* oculto por padrão */
+}
+
+.download-reset.show { display: inline-block; }
+
 /* Footer */
 footer {
     padding: 40px;
