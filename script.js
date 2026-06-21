@@ -77,4 +77,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ===== Contador de downloads (persistente no localStorage) =====
+    const downloadLink = document.getElementById('main-download-link');
+    const countSpan = document.getElementById('download-count');
+    const storageKey = 'download_count_main';
+
+    function formatCount(n) { return String(n).padStart(2, '0'); }
+
+    let count = parseInt(localStorage.getItem(storageKey) || '0', 10);
+    if (countSpan) countSpan.textContent = formatCount(isNaN(count) ? 0 : count);
+
+    if (downloadLink) {
+        const increment = () => {
+            count = (isNaN(count) ? 0 : count) + 1;
+            localStorage.setItem(storageKey, String(count));
+            if (countSpan) countSpan.textContent = formatCount(count);
+        };
+
+        // Usa eventos que disparam antes da navegação para garantir que o incremento seja salvo
+        downloadLink.addEventListener('mousedown', increment);
+        downloadLink.addEventListener('touchstart', increment, { passive: true });
+        // Também lida com ativação via teclado
+        downloadLink.addEventListener('keydown', (e) => { if (e.key === 'Enter') increment(); });
+    }
+
+    // Botão de reset - visível apenas quando admin=1 ou via parâmetro reset_count=1
+    const resetBtn = document.getElementById('download-reset');
+    const params = new URLSearchParams(window.location.search);
+
+    function showReset() {
+        if (resetBtn) {
+            resetBtn.classList.add('show');
+            resetBtn.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function doReset() {
+        count = 0;
+        localStorage.setItem(storageKey, String(count));
+        if (countSpan) countSpan.textContent = formatCount(count);
+    }
+
+    // Se o parâmetro reset_count=1 estiver presente, reseta imediatamente
+    if (params.get('reset_count') === '1') {
+        doReset();
+        showReset();
+    }
+
+    // Se admin=1 estiver presente, apenas mostra o botão de reset (sem reset automático)
+    if (params.get('admin') === '1') {
+        showReset();
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const ok = confirm('Resetar contador de downloads para 0?');
+            if (ok) doReset();
+        });
+    }
 });
